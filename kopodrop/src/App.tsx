@@ -1,3 +1,4 @@
+import { Counter } from "./component/Counter"
 import Header from "./component/Header"
 import Hero from "./component/Hero"
 
@@ -6,6 +7,7 @@ function App() {
 <div className="w-[90%] mx-auto">
   <Header/>
   <Hero/>
+  <Counter/>
 
 </div>
 

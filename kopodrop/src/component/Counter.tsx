@@ -1,5 +1,5 @@
 
-import { useState } from "react"
+import { useState,useEffect } from "react"
 export const Counter = () => {
 
     const  [count, setcount] = useState(0)
@@ -24,6 +24,13 @@ export const Counter = () => {
      setSkipValue(parsedSkipVlaue)
 
     }
+
+    useEffect(()=>{
+        console.log("new count", count)
+
+    },[count])
+
+
   return (
     <div>
      <h1 className="text-center font-bold text-xl">

@@ -1,22 +1,12 @@
-import { Counter } from "./component/Counter"
-import Header from "./component/Header"
-import Hero from "./component/Hero"
-import Products from "./component/products"
-
+import { RouterProvider } from "react-router-dom";
+import routes from "./routes";
 
 function App() {
   return (
-<div className="w-[90%] mx-auto">
-  <Header/>
-  <Hero/>
-  {/* <Counter/> */}
-  <Products/>
-
-</div>
-
-
-
-  )
+    <div>
+      <RouterProvider router={routes} />
+    </div>
+  );
 }
 
-export default App
+export default App;

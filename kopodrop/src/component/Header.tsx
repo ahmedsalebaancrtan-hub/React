@@ -1,4 +1,5 @@
 import { ChevronDown } from "lucide-react"
+import { Link } from "react-router-dom"
 
 
 
@@ -6,21 +7,23 @@ export default function Header() {
   return (
   <div className="w-full py-4 px-4 flex items-center justify-between">
     <div className="logo-links flex items-center gap-10">
+        <Link to={'/'}>
         <div className="logo-container">
             <img src="logo.svg" alt="image" />
 
         </div>
+        </Link>
 
         <div className="links flex items-center gap-2 text-gray-700">
             <div className="link">
-                <a href="#">Learn</a>
+              <Link to={'/learn'}>Learn</Link>
             </div>
             <div className="link flex items-center gap-1">
-                <a href="#">Resources</a>
+               <Link to={'/resources'}>Resources</Link>
                   <ChevronDown />
             </div>
             <div className="link">
-                <a href="#">FAQs</a>
+                <Link to={'/fqs'}>FQS</Link>
             
             </div>
 

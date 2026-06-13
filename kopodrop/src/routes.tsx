@@ -4,13 +4,19 @@ import { Home } from "./pages/Home";
 import { Learn } from "./pages/Learn";
 import { Resources } from "./pages/Resources";
 import { FQs } from "./pages/FQs";
+import { MainPage } from "./pages";
 
 const routes = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-  },
+    element: <MainPage />,
+
+ children : [
   {
+    index : true,
+    element : <Home/>
+  },
+   {
     path: "/learn",
     element: <Learn />,
   },
@@ -22,6 +28,8 @@ const routes = createBrowserRouter([
     path: "/fQs",
     element: <FQs />,
   },
+ ]
+}
 ]);
 
 export default routes;

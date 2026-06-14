@@ -1,5 +1,4 @@
-import Footer from "../component/footer"
-import Header from "../component/Header"
+import { Counter } from "../component/Counter"
 import Hero from "../component/Hero"
 import Products from "../component/products"
 
@@ -9,7 +8,7 @@ export const Home = () => {
     <div>
        
           <Hero/>
-          {/* <Counter/> */}
+          <Counter/>
           <Products/>
         
     </div>

@@ -1,23 +1,13 @@
 
 import {useState, useEffect} from 'react'
-import type { IProducts } from '../types/products'
+
 import { Product } from './product'
+import { useProductStore } from '../store/ProductStore'
 
 
 export default function Products()   {
 
-const   [products, setproducts] =   useState<IProducts[]>([])
-
-const getproducts = async () => {
-
-  const response  = await fetch("https://dummyjson.com/products")
-  const data  = await  response.json()
-
-  console.log(data)
-
-  setproducts(data.products)
-   
-}
+const {products, getproducts, loading, error} = useProductStore()
 
 
 useEffect(()=>{
@@ -29,7 +19,11 @@ useEffect(()=>{
   <h1 className="text-3xl font-bold text-gray-800 mb-8">
     Product Summary
   </h1>
-
+  <button type='button' onClick={getproducts}>
+    refresh items
+  </button>
+{loading ? ( <p>Loading.....</p>): error ? (<p>{error}</p>):(
+  
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
     {products.length > 0 &&
       products?.map((product) => {
@@ -39,6 +33,7 @@ useEffect(()=>{
         );
       })}
   </div>
+)}
 </div>
   )
 }

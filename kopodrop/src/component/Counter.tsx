@@ -1,23 +1,24 @@
 
 import { useState,useEffect } from "react"
+import { UseCounterStore } from "../store/counterStore"
 export const Counter = () => {
 
-    const  [count, setcount] = useState(0)
+    const {count, Increment, Decrement} = UseCounterStore();
     const [skipValue, setSkipValue] = useState(1)
     const [email,setemail] = useState("")
 
     const IncerementHandler = () => {
-        setcount(count + skipValue)
-     
+    
+     Increment()
     }
 
     const DecrementHandler = () =>{
-       setcount(count - skipValue)
-      
+
+    Decrement()
     }
 
     const ResetHandler = () =>{
-        setcount(0)
+      
     }
     const handleSkipValueChange = (e : React.ChangeEvent<HTMLInputElement>) =>{
         const parsedSkipVlaue = +(e.target.value)

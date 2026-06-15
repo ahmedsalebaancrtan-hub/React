@@ -1,7 +1,10 @@
+
+import { useCartStore } from '../store/CartStore'
 import type { IProducts } from '../types/products'
-import { Button } from './Button'
+
 
 export const Product = ({product} : {product : IProducts}) => {
+  const { addToCart } = useCartStore()
   return (
     <div>
          <div
@@ -30,8 +33,12 @@ export const Product = ({product} : {product : IProducts}) => {
                   {product.discountPercentage}% OFF
                 </p>
               </div>
-<Button color="blue" text="Add To Cart" />
-              
+              <button 
+                className="mt-4 w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300"
+                onClick={() => addToCart(product)}
+              >
+                Add to Cart
+              </button>
             </div>
           </div>
     </div>

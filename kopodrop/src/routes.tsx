@@ -5,6 +5,7 @@ import { Learn } from "./pages/Learn";
 import { Resources } from "./pages/Resources";
 import { FQs } from "./pages/FQs";
 import { MainPage } from "./pages";
+import Cart from "./pages/Cart";
 
 const routes = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const routes = createBrowserRouter([
     path: "/fQs",
     element: <FQs />,
   },
+  {
+    path: "/cart",
+    element: <Cart />,
+  }
  ]
 }
 ]);

@@ -1,6 +1,7 @@
-import { ChevronDown } from "lucide-react"
-import { Link } from "react-router-dom"
+import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 import { UseCounterStore } from "../store/counterStore";
+import { CartCounter } from "./cartCounter";
 
 
 
@@ -32,7 +33,8 @@ export default function Header() {
 
         </div>
     </div>
-<div className="installkopodrop">
+<div className="installkopodrop flex items-center gap-4">
+    <CartCounter/>
     <button className="p-4 bg-[#023047] text-white rounded-xl">
         installkobodrop{count}
     </button>
